@@ -2675,7 +2675,7 @@ namespace Project.testdbDataSetTableAdapters {
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM `customers` WHERE ((`id` = @p1) AND (`fio` = @p2) AND (`phone` = @p3)" +
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM \'customers\' WHERE ((\'id\' = @p1) AND (\'fio\' = @p2) AND (\'phone\' = @p3)" +
                 ")";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
@@ -2704,7 +2704,7 @@ namespace Project.testdbDataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(param);
             this._adapter.InsertCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO `customers` (`fio`, `phone`) VALUES (@p1, @p2)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO \'customers\' (\'fio\', \'phone\') VALUES (@p1, @p2)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
@@ -2724,8 +2724,8 @@ namespace Project.testdbDataSetTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE `customers` SET `fio` = @p1, `phone` = @p2 WHERE ((`id` = @p3) AND (`fio` " +
-                "= @p4) AND (`phone` = @p5))";
+            this._adapter.UpdateCommand.CommandText = "UPDATE \'customers\' SET \'fio\' = @p1, \'phone\' = @p2 WHERE ((\'id\' = @p3) AND (\'fio\' " +
+                "= @p4) AND (\'phone\' = @p5))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
@@ -2782,7 +2782,7 @@ namespace Project.testdbDataSetTableAdapters {
             this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[1];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT `id`, `fio`, `phone` FROM `customers`";
+            this._commandCollection[0].CommandText = "SELECT \'id\', \'fio\', \'phone\' FROM \'customers\'";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -3080,8 +3080,8 @@ namespace Project.testdbDataSetTableAdapters {
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM `materials` WHERE ((`id` = @p1) AND (`name` = @p2) AND (`manufacturer" +
-                "` = @p3))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM \'materials\' WHERE ((\'id\' = @p1) AND (\'name\' = @p2) AND (\'manufacturer" +
+                "\' = @p3))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
@@ -3109,7 +3109,7 @@ namespace Project.testdbDataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(param);
             this._adapter.InsertCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO `materials` (`name`, `manufacturer`) VALUES (@p1, @p2)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO \'materials\' (\'name\', \'manufacturer\') VALUES (@p1, @p2)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
@@ -3129,8 +3129,8 @@ namespace Project.testdbDataSetTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE `materials` SET `name` = @p1, `manufacturer` = @p2 WHERE ((`id` = @p3) AND" +
-                " (`name` = @p4) AND (`manufacturer` = @p5))";
+            this._adapter.UpdateCommand.CommandText = "UPDATE \'materials\' SET \'name\' = @p1, \'manufacturer\' = @p2 WHERE ((\'id\' = @p3) AND" +
+                " (\'name\' = @p4) AND (\'manufacturer\' = @p5))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
@@ -3187,7 +3187,7 @@ namespace Project.testdbDataSetTableAdapters {
             this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[1];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT `id`, `name`, `manufacturer` FROM `materials`";
+            this._commandCollection[0].CommandText = "SELECT \'id\', \'name\', \'manufacturer\' FROM \'materials\'";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -3486,8 +3486,8 @@ namespace Project.testdbDataSetTableAdapters {
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM `prices` WHERE ((`id` = @p1) AND (`name` = @p2) AND (`price` = @p3) A" +
-                "ND (`id_material` = @p4))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM \'prices\' WHERE ((\'id\' = @p1) AND (\'name\' = @p2) AND (\'price\' = @p3) A" +
+                "ND (\'id_material\' = @p4))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
@@ -3523,7 +3523,7 @@ namespace Project.testdbDataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(param);
             this._adapter.InsertCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO `prices` (`name`, `price`, `id_material`) VALUES (@p1, @p2, @p3)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO \'prices\' (\'name\', \'price\', \'id_material\') VALUES (@p1, @p2, @p3)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
@@ -3551,8 +3551,8 @@ namespace Project.testdbDataSetTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE `prices` SET `name` = @p1, `price` = @p2, `id_material` = @p3 WHERE ((`id`" +
-                " = @p4) AND (`name` = @p5) AND (`price` = @p6) AND (`id_material` = @p7))";
+            this._adapter.UpdateCommand.CommandText = "UPDATE \'prices\' SET \'name\' = @p1, \'price\' = @p2, \'id_material\' = @p3 WHERE ((\'id\'" +
+                " = @p4) AND (\'name\' = @p5) AND (\'price\' = @p6) AND (\'id_material\' = @p7))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
@@ -3625,7 +3625,7 @@ namespace Project.testdbDataSetTableAdapters {
             this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[1];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT `id`, `name`, `price`, `id_material` FROM `prices`";
+            this._commandCollection[0].CommandText = "SELECT \'id\', \'name\', \'price\', \'id_material\' FROM \'prices\'";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -3909,8 +3909,8 @@ namespace Project.testdbDataSetTableAdapters {
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM `services` WHERE ((`id` = @p1) AND (`id_staff` = @p2) AND (`id_custom" +
-                "ers` = @p3) AND (`id_price` = @p4) AND (`payment` = @p5))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM \'services\' WHERE ((\'id\' = @p1) AND (\'id_staff\' = @p2) AND (\'id_custom" +
+                "ers\' = @p3) AND (\'id_price\' = @p4) AND (\'payment\' = @p5))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
@@ -3954,7 +3954,7 @@ namespace Project.testdbDataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(param);
             this._adapter.InsertCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO `services` (`id_staff`, `id_customers`, `id_price`, `payment`) VALUES" +
+            this._adapter.InsertCommand.CommandText = "INSERT INTO \'services\' (\'id_staff\', \'id_customers\', \'id_price\', \'payment\') VALUES" +
                 " (@p1, @p2, @p3, @p4)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
@@ -3991,9 +3991,9 @@ namespace Project.testdbDataSetTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE `services` SET `id_staff` = @p1, `id_customers` = @p2, `id_price` = @p3, `" +
-                "payment` = @p4 WHERE ((`id` = @p5) AND (`id_staff` = @p6) AND (`id_customers` = " +
-                "@p7) AND (`id_price` = @p8) AND (`payment` = @p9))";
+            this._adapter.UpdateCommand.CommandText = "UPDATE \'services\' SET \'id_staff\' = @p1, \'id_customers\' = @p2, \'id_price\' = @p3, \'" +
+                "payment\' = @p4 WHERE ((\'id\' = @p5) AND (\'id_staff\' = @p6) AND (\'id_customers\' = " +
+                "@p7) AND (\'id_price\' = @p8) AND (\'payment\' = @p9))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
@@ -4082,7 +4082,7 @@ namespace Project.testdbDataSetTableAdapters {
             this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[1];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT `id`, `id_staff`, `id_customers`, `id_price`, `payment` FROM `services`";
+            this._commandCollection[0].CommandText = "SELECT \'id\', \'id_staff\', \'id_customers\', \'id_price\', \'payment\' FROM \'services\'";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -4350,8 +4350,8 @@ namespace Project.testdbDataSetTableAdapters {
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM `staff` WHERE ((`id` = @p1) AND (`fio` = @p2) AND (`position` = @p3) " +
-                "AND (`phone` = @p4) AND (`address` = @p5))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM \'staff\' WHERE ((\'id\' = @p1) AND (\'fio\' = @p2) AND (\'position\' = @p3) " +
+                "AND (\'phone\' = @p4) AND (\'address\' = @p5))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
@@ -4395,7 +4395,7 @@ namespace Project.testdbDataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(param);
             this._adapter.InsertCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO `staff` (`fio`, `position`, `phone`, `address`) VALUES (@p1, @p2, @p3" +
+            this._adapter.InsertCommand.CommandText = "INSERT INTO \'staff\' (\'fio\', \'position\', \'phone\', \'address\') VALUES (@p1, @p2, @p3" +
                 ", @p4)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
@@ -4432,9 +4432,9 @@ namespace Project.testdbDataSetTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE `staff` SET `fio` = @p1, `position` = @p2, `phone` = @p3, `address` = @p4 " +
-                "WHERE ((`id` = @p5) AND (`fio` = @p6) AND (`position` = @p7) AND (`phone` = @p8)" +
-                " AND (`address` = @p9))";
+            this._adapter.UpdateCommand.CommandText = "UPDATE \'staff\' SET \'fio\' = @p1, \'position\' = @p2, \'phone\' = @p3, \'address\' = @p4 " +
+                "WHERE ((\'id\' = @p5) AND (\'fio\' = @p6) AND (\'position\' = @p7) AND (\'phone\' = @p8)" +
+                " AND (\'address\' = @p9))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
@@ -4523,7 +4523,7 @@ namespace Project.testdbDataSetTableAdapters {
             this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[1];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT `id`, `fio`, `position`, `phone`, `address` FROM `staff`";
+            this._commandCollection[0].CommandText = "SELECT \'id\', \'fio\', \'position\', \'phone\', \'address\' FROM \'staff\'";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

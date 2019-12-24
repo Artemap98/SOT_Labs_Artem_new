@@ -12,11 +12,11 @@ using BL;
 using NUnit.Framework;
 
 
-//Тесты на бизнес-логику
+
 namespace BLTests
 {
     [TestFixture]
-    public class TestCustomers
+    public class TestMaterials
     {
         private BusinessLogic BL = new BusinessLogic();
 
@@ -29,145 +29,139 @@ namespace BLTests
         [Test]
         public void GetAll()
         {
-            DataSet1 dataSet = BL.getCustomers();
-            List<DataRow> list = dataSet.customers.Select().OfType<DataRow>().ToList();
+            DataSet1 dataSet = BL.getMaterialss();
+            List<DataRow> list = dataSet.materials.Select().OfType<DataRow>().ToList();
             list.Sort((a, b) => ((int)a["id"]).CompareTo((int)b["id"]));
 
-            Assert.That(list.Count, Is.EqualTo(8));
-            Assert.That((int)(list[0]["id"]), Is.EqualTo(1));
-            Assert.That((string)(list[0]["fio"]), Is.EqualTo("Бревна буковые"));
-            Assert.That((string)(list[0]["phone"]), Is.EqualTo("02.20.12.112"));  
+            Assert.That(list.Count, Is.EqualTo(5));
+            Assert.That((int)(list[0]["id"]), Is.EqualTo(2));
+            Assert.That((string)(list[0]["name"]), Is.EqualTo("ОАО \"КРАСНОЯРСКЛЕСОМАТЕРИАЛЫ\""));
+            Assert.That((int)(list[0]["manufacturer"]), Is.EqualTo(47828137));  
         }
 
         [Test]
-        public void CustomersById()
+        public void materialsById()
         {
-            DataSet1 dataSet1 = BL.getCustomers();
-            List<DataRow> list = dataSet1.customers.Select("id = 1").OfType<DataRow>().ToList();
+            DataSet1 dataSet = BL.getMaterialss();
+            List<DataRow> list = dataSet.materials.Select("id = 2").OfType<DataRow>().ToList();
 
             Assert.That(list.Count, Is.EqualTo(1));
 
-            Assert.That((int)(list[0]["id"]), Is.EqualTo(1));
-            Assert.That((string)(list[0]["fio"]), Is.EqualTo("Бревна буковые"));
-            Assert.That((string)(list[0]["phone"]), Is.EqualTo("02.20.12.112"));  
+            Assert.That((int)(list[0]["id"]), Is.EqualTo(2));
+            Assert.That((string)(list[0]["name"]), Is.EqualTo("ОАО \"КРАСНОЯРСКЛЕСОМАТЕРИАЛЫ\""));
+            Assert.That((int)(list[0]["manufacturer"]), Is.EqualTo(47828137));  
         }
 
         [Test]
-        public void CustomersByName()
+        public void materialsByName()
         {
-            DataSet1 dataSet1 = BL.getCustomers();
-            List<DataRow> list = dataSet1.customers.Select("fio = 'Бревна буковые'").OfType<DataRow>().ToList();
+            DataSet1 dataSet = BL.getMaterialss();
+
+            List<DataRow> list = dataSet.materials.Select("name = 'ОАО \"КРАСНОЯРСКЛЕСОМАТЕРИАЛЫ\"'").OfType<DataRow>().ToList();
 
             Assert.That(list.Count, Is.EqualTo(1));
 
-            Assert.That((int)(list[0]["id"]), Is.EqualTo(1));
-            Assert.That((string)(list[0]["fio"]), Is.EqualTo("Бревна буковые"));
-            Assert.That((string)(list[0]["phone"]), Is.EqualTo("02.20.12.112"));
+            Assert.That((int)(list[0]["id"]), Is.EqualTo(2));
+            Assert.That((string)(list[0]["name"]), Is.EqualTo("ОАО \"КРАСНОЯРСКЛЕСОМАТЕРИАЛЫ\""));
+            Assert.That((int)(list[0]["manufacturer"]), Is.EqualTo(47828137));
         }
 
         [Test]
-        public void CustomersByCode()
+        public void materialsByCode()
         {
-            DataSet1 dataSet1 = BL.getCustomers();
+            DataSet1 dataSet = BL.getMaterialss();
 
-            List<DataRow> list = dataSet1.customers.Select("phone = '02.20.12.112'").OfType<DataRow>().ToList();
+            List<DataRow> list = dataSet.materials.Select("manufacturer = '47828137'").OfType<DataRow>().ToList();
 
             Assert.That(list.Count, Is.EqualTo(1));
 
-            Assert.That((int)(list[0]["id"]), Is.EqualTo(1));
-            Assert.That((string)(list[0]["fio"]), Is.EqualTo("Бревна буковые"));
-            Assert.That((string)(list[0]["phone"]), Is.EqualTo("02.20.12.112"));
+            Assert.That((int)(list[0]["id"]), Is.EqualTo(2));
+            Assert.That((string)(list[0]["name"]), Is.EqualTo("ОАО \"КРАСНОЯРСКЛЕСОМАТЕРИАЛЫ\""));
+            Assert.That((int)(list[0]["manufacturer"]), Is.EqualTo(47828137));
         }
 
         [Test]
-        public void CustomersUpdate()
+        public void materialsUpdate()
         {
-            DataSet1 dataSet1 = BL.getCustomers();
+            DataSet1 dataSet = BL.getMaterialss();
+            List<DataRow> list = dataSet.materials.Select("").OfType<DataRow>().ToList();
+            // Сортируем строки по айдишнику в порядке возрастания
+            list.Sort((x, y) => ((int)x["id"]).CompareTo((int)y["id"]));
 
-            List<DataRow> list = dataSet1.customers.Select("").OfType<DataRow>().ToList();
-            // Сортируем строки по id в порядке возрастания
-            list.Sort((a, b) => ((int)a["id"]).CompareTo((int)b["id"]));
 
             // Обновляем первую запись
-            DataSet1.customersRow oldM = null;
+            DataSet1.materialsRow oldM = null;
+
             String oldName = "";
 
-            oldM = dataSet1.customers[0];
-            oldName = oldM.fio;
+            oldM = dataSet.materials[0];
+            oldName = oldM.name;
 
-            dataSet1.customers[0].fio = oldM.fio + "_changed";
-            BL.updateCustomers(dataSet1);
-
+            dataSet.materials[0].name = oldM.name + "_changed";
+            BL.updateMaterialss(dataSet);
 
 
             // Заново читаем из базы, проверяем, что поменялось
-            DataSet1 dataSetUpdated = BL.getCustomers();
-            
+            DataSet1 dataSetUpdated = BL.getMaterialss();
+
             // достаем из датасета все записи таблицы
-            List<DataRow> list_3 = dataSetUpdated.customers.Select("").OfType<DataRow>().ToList();
+            List<DataRow> list_3 = dataSetUpdated.materials.Select("").OfType<DataRow>().ToList();
             // Сортируем по id
             list_3.Sort((x, y) => ((int)x["id"]).CompareTo((int)y["id"]));
             // Проверяем что записей столько же
-            Assert.That(list_3.Count, Is.EqualTo(8));
+            Assert.That(list_3.Count, Is.EqualTo(5));
 
-            // Достаем ту же запись
-            List<DataRow> rows_list = dataSet1.customers.Select("id = " + oldM.id).OfType<DataRow>().ToList();
+            // Достае ту же запись
+            List<DataRow> rows_list = dataSet.materials.Select("id = " + oldM.id).OfType<DataRow>().ToList();
             // Проверяем что по такому id одна запись
             Assert.That(rows_list.Count, Is.EqualTo(1));
 
-            DataSet1.customersRow updatedM = dataSetUpdated.customers[0];
+            DataSet1.materialsRow updatedM = dataSetUpdated.materials[0];
 
             Assert.That(oldM.id, Is.EqualTo(updatedM.id));
 
-            Assert.That(oldName, !Is.EqualTo(updatedM.fio));
-            Assert.That(oldName + "_changed", Is.EqualTo(updatedM.fio));
-
+            Assert.That(oldName, !Is.EqualTo(updatedM.name));
+            Assert.That(oldName + "_changed", Is.EqualTo(updatedM.name));
         }
 
         [Test]
-        public void CustomersAdd()
+        public void materialsAdd()
         {
-            DataSet1 dataSetRead = BL.getCustomers();
+            DataSet1 dataSetRead = BL.getMaterialss();
 
             int countRowBefore = 0;
-            List<DataRow> rows_list = dataSetRead.customers.Select("").OfType<DataRow>().ToList();
+
+            List<DataRow> rows_list = dataSetRead.materials.Select("").OfType<DataRow>().ToList();
             // Сортируем строки по id в порядке возрастания
             rows_list.Sort((x, y) => ((int)x["id"]).CompareTo((int)y["id"]));
             // Количество записей до внесения новой
             countRowBefore = rows_list.Count();
 
 
-            // НОВОЕ СОЕДИНЕНИЕ, Добавляем в базу новую запись
-            AbstractConnection absCon_Update = null;
-            AbstractTransaction absTran_Update = null;
-
-            List<DataRow> list_1 = dataSetRead.customers.Select("").OfType<DataRow>().ToList();
+            // Добавляем в базу новую запись
+            List<DataRow> list_1 = dataSetRead.materials.Select("").OfType<DataRow>().ToList();
             // Сортируем строки по айдишнику в порядке возрастания
-            list_1.Sort((x, y) => ((int)x["id"]).CompareTo((int)y["id"]));
-///            
-            DataRow rowForAdded = dataSetRead.customers.NewRow();
+            list_1.Sort((x, y) => ((int)x["id"]).CompareTo((int)y["id"]));       
+            DataRow rowForAdded = dataSetRead.materials.NewRow();
 
-            rowForAdded["fio"] = "Бревна буковые";
-            rowForAdded["phone"] = "02.20.12.112";
+            rowForAdded["name"] = "ОАО \"КРАСНОЯРСКЛЕСОМАТЕРИАЛЫ2\"";
+            rowForAdded["manufacturer"] = "47828138";
 
-            dataSetRead.customers.Rows.Add(rowForAdded);
-            List<DataRow> list_2 = dataSetRead.customers.Select("").OfType<DataRow>().ToList();
-            // Сортируем строки по id в порядке возрастания
+            dataSetRead.materials.Rows.Add(rowForAdded);
+
+            List<DataRow> list_2 = dataSetRead.materials.Select("").OfType<DataRow>().ToList();
+            // Сортируем строки по айдишнику в порядке возрастания
             list_2.Sort((x, y) => ((int)x["id"]).CompareTo((int)y["id"]));
-            
-            BL.updateCustomers(dataSetRead);
+            BL.updateMaterialss(dataSetRead);
 
+            // проверяем что теперь записей стало на одну больше
 
-            //проверяем что теперь записей стало на одну больше
+            DataSet1 dataSet_AfterInsert = BL.getMaterialss();
 
-            DataSet1 dataSet_AfterInsert = BL.getCustomers();
-
-            int countRowAfter = 0;
-
-            List<DataRow> rows_list_AfterInsert = dataSet_AfterInsert.customers.Select("").OfType<DataRow>().ToList();
+            List<DataRow> rows_list_AfterInsert = dataSet_AfterInsert.materials.Select("").OfType<DataRow>().ToList();
             // Сортируем строки по айдишнику в порядке возрастания
             rows_list_AfterInsert.Sort((x, y) => ((int)x["id"]).CompareTo((int)y["id"]));
-            countRowAfter = rows_list_AfterInsert.Count();
+            int countRowAfter = rows_list_AfterInsert.Count();
 
             // Проверяем, что записей стало на одну больше
             Assert.That(countRowAfter - countRowBefore, Is.EqualTo(1));
@@ -175,16 +169,16 @@ namespace BLTests
             // Берем последнюю добавленную запись( для этого сортируем )
             DataRow rowAfterInsert = rows_list_AfterInsert[rows_list_AfterInsert.Count - 1];
             // Проверяем что запись добавилась правильно
-            Assert.That(rowForAdded["fio"], Is.EqualTo(rowAfterInsert["fio"]));
-            Assert.That(rowForAdded["phone"], Is.EqualTo(rowAfterInsert["phone"]));
+            Assert.That(rowForAdded["name"], Is.EqualTo(rowAfterInsert["name"]));
+            Assert.That(rowForAdded["manufacturer"], Is.EqualTo(rowAfterInsert["manufacturer"]));
         }
 
         [Test]
-        public void CustomersDelete()
+        public void materialsDelete()
         {
-            DataSet1 dataSetRead = BL.getCustomers();
+            DataSet1 dataSetRead = BL.getMaterialss();
 
-            List<DataRow> rows_list = dataSetRead.customers.Select("fio = 'Бревна буковые'").OfType<DataRow>().ToList();
+            List<DataRow> rows_list = dataSetRead.materials.Select("name = 'ОАО \"КРАСНОЯРСКЛЕСОМАТЕРИАЛЫ\"'").OfType<DataRow>().ToList();
             // Сортируем строки по id в порядке возрастания
             rows_list.Sort((x, y) => ((int)x["id"]).CompareTo((int)y["id"]));
             // Количество записей до удаления
@@ -192,20 +186,18 @@ namespace BLTests
             Assert.That(countRowBefore, Is.EqualTo(1));
 
             //удаляем
-            List<DataRow> list_1 = dataSetRead.customers.Select("fio = 'Бревна буковые'").OfType<DataRow>().ToList();
+            List<DataRow> list_1 = dataSetRead.materials.Select("name = 'ОАО \"КРАСНОЯРСКЛЕСОМАТЕРИАЛЫ\"'").OfType<DataRow>().ToList();
             foreach (DataRow rowForDel in list_1)
             {
-                //dataSetRead.customers.Rows.Remove(rowForDel);
                 rowForDel.Delete();
             }
-            BL.updateCustomers(dataSetRead);
+            BL.updateMaterialss(dataSetRead);
             dataSetRead.AcceptChanges();
 
             // проверяем что теперь записей стало на одну больше
 
-            DataSet1 dataSet_AfterDel = BL.getCustomers();
-            //BL.updateCustomers(dataSet_AfterInsert);
-            List<DataRow> rows_list_AfterInsert = dataSet_AfterDel.customers.Select("fio = 'Бревна буковые'").OfType<DataRow>().ToList();
+            DataSet1 dataSet_AfterDel = BL.getMaterialss();
+            List<DataRow> rows_list_AfterInsert = dataSet_AfterDel.materials.Select("name = 'ОАО \"КРАСНОЯРСКЛЕСОМАТЕРИАЛЫ\"'").OfType<DataRow>().ToList();
 
             Assert.That(rows_list_AfterInsert.Count, Is.EqualTo(0));
         }
