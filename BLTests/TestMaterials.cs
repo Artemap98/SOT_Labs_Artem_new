@@ -29,7 +29,7 @@ namespace BLTests
         [Test]
         public void GetAll()
         {
-            DataSet1 dataSet = BL.getMaterialss();
+            DataSet1 dataSet = BL.getMaterials();
             List<DataRow> list = dataSet.materials.Select().OfType<DataRow>().ToList();
             list.Sort((a, b) => ((int)a["id"]).CompareTo((int)b["id"]));
 
@@ -42,7 +42,7 @@ namespace BLTests
         [Test]
         public void materialsById()
         {
-            DataSet1 dataSet = BL.getMaterialss();
+            DataSet1 dataSet = BL.getMaterials();
             List<DataRow> list = dataSet.materials.Select("id = 2").OfType<DataRow>().ToList();
 
             Assert.That(list.Count, Is.EqualTo(1));
@@ -55,7 +55,7 @@ namespace BLTests
         [Test]
         public void materialsByName()
         {
-            DataSet1 dataSet = BL.getMaterialss();
+            DataSet1 dataSet = BL.getMaterials();
 
             List<DataRow> list = dataSet.materials.Select("name = 'ОАО \"КРАСНОЯРСКЛЕСОМАТЕРИАЛЫ\"'").OfType<DataRow>().ToList();
 
@@ -69,7 +69,7 @@ namespace BLTests
         [Test]
         public void materialsByCode()
         {
-            DataSet1 dataSet = BL.getMaterialss();
+            DataSet1 dataSet = BL.getMaterials();
 
             List<DataRow> list = dataSet.materials.Select("manufacturer = '47828137'").OfType<DataRow>().ToList();
 
@@ -83,7 +83,7 @@ namespace BLTests
         [Test]
         public void materialsUpdate()
         {
-            DataSet1 dataSet = BL.getMaterialss();
+            DataSet1 dataSet = BL.getMaterials();
             List<DataRow> list = dataSet.materials.Select("").OfType<DataRow>().ToList();
             // Сортируем строки по айдишнику в порядке возрастания
             list.Sort((x, y) => ((int)x["id"]).CompareTo((int)y["id"]));
@@ -98,11 +98,11 @@ namespace BLTests
             oldName = oldM.name;
 
             dataSet.materials[0].name = oldM.name + "_changed";
-            BL.updateMaterialss(dataSet);
+            BL.updateMaterials(dataSet);
 
 
             // Заново читаем из базы, проверяем, что поменялось
-            DataSet1 dataSetUpdated = BL.getMaterialss();
+            DataSet1 dataSetUpdated = BL.getMaterials();
 
             // достаем из датасета все записи таблицы
             List<DataRow> list_3 = dataSetUpdated.materials.Select("").OfType<DataRow>().ToList();
@@ -127,7 +127,7 @@ namespace BLTests
         [Test]
         public void materialsAdd()
         {
-            DataSet1 dataSetRead = BL.getMaterialss();
+            DataSet1 dataSetRead = BL.getMaterials();
 
             int countRowBefore = 0;
 
@@ -152,11 +152,11 @@ namespace BLTests
             List<DataRow> list_2 = dataSetRead.materials.Select("").OfType<DataRow>().ToList();
             // Сортируем строки по айдишнику в порядке возрастания
             list_2.Sort((x, y) => ((int)x["id"]).CompareTo((int)y["id"]));
-            BL.updateMaterialss(dataSetRead);
+            BL.updateMaterials(dataSetRead);
 
             // проверяем что теперь записей стало на одну больше
 
-            DataSet1 dataSet_AfterInsert = BL.getMaterialss();
+            DataSet1 dataSet_AfterInsert = BL.getMaterials();
 
             List<DataRow> rows_list_AfterInsert = dataSet_AfterInsert.materials.Select("").OfType<DataRow>().ToList();
             // Сортируем строки по айдишнику в порядке возрастания
@@ -176,7 +176,7 @@ namespace BLTests
         [Test]
         public void materialsDelete()
         {
-            DataSet1 dataSetRead = BL.getMaterialss();
+            DataSet1 dataSetRead = BL.getMaterials();
 
             List<DataRow> rows_list = dataSetRead.materials.Select("name = 'ОАО \"КРАСНОЯРСКЛЕСОМАТЕРИАЛЫ\"'").OfType<DataRow>().ToList();
             // Сортируем строки по id в порядке возрастания
@@ -191,12 +191,12 @@ namespace BLTests
             {
                 rowForDel.Delete();
             }
-            BL.updateMaterialss(dataSetRead);
+            BL.updateMaterials(dataSetRead);
             dataSetRead.AcceptChanges();
 
             // проверяем что теперь записей стало на одну больше
 
-            DataSet1 dataSet_AfterDel = BL.getMaterialss();
+            DataSet1 dataSet_AfterDel = BL.getMaterials();
             List<DataRow> rows_list_AfterInsert = dataSet_AfterDel.materials.Select("name = 'ОАО \"КРАСНОЯРСКЛЕСОМАТЕРИАЛЫ\"'").OfType<DataRow>().ToList();
 
             Assert.That(rows_list_AfterInsert.Count, Is.EqualTo(0));

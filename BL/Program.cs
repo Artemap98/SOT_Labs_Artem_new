@@ -120,7 +120,7 @@ namespace BL
             }
         }
 
-        public DataSet1 getMaterialss()
+        public DataSet1 getMaterials()
         {
             MaterialsDataAccessor DA = new MaterialsDataAccessor();
             PricesDataAccessor DAprices = new PricesDataAccessor();
@@ -132,8 +132,8 @@ namespace BL
                 absConnection = DBFactory.createConnection();
                 absConnection.open();
                 absTransaction = absConnection.beginTransaction();
-                DA.Read(absConnection, absTransaction, dataSet1);
                 DAprices.Read(absConnection, absTransaction, dataSet1);
+                DA.Read(absConnection, absTransaction, dataSet1);
                 absTransaction.commit();
             }
             catch (Exception e)
@@ -148,7 +148,7 @@ namespace BL
             return dataSet1;
         }
 
-        public void updateMaterialss(DataSet1 dataSet1)
+        public void updateMaterials(DataSet1 dataSet1)
         {
             MaterialsDataAccessor DA = new MaterialsDataAccessor();
             PricesDataAccessor DAprices = new PricesDataAccessor();

@@ -27,7 +27,7 @@ namespace Project.DataAccessor
             adapter.SelectCommand = new MySqlCommand(sqlSelect, c.get(), t.get());
 
             //INSERT
-            String sqlInsert = "INSERT INTO customers (fio, position_customers) VALUES (@fio, @position_customers)";
+            String sqlInsert = "INSERT INTO customers (fio, phone) VALUES (@fio, @phone)";
             adapter.InsertCommand = new MySqlCommand (sqlInsert, c.get(), t.get());
             adapter.InsertCommand.Parameters.Add(new MySqlParameter()
             {
@@ -36,12 +36,12 @@ namespace Project.DataAccessor
             });
             adapter.InsertCommand.Parameters.Add(new MySqlParameter()
             {
-                SourceColumn = "position_customers",
-                ParameterName = "@position_customers"
+                SourceColumn = "phone",
+                ParameterName = "@phone"
             });
 
             //UPDATE
-            String sqlUpdate = "Update customers SET fio=@fio, position_customers=@position_customers where id=@id";
+            String sqlUpdate = "Update customers SET fio=@fio, phone=@phone where id=@id";
             adapter.UpdateCommand = new MySqlCommand(sqlUpdate, c.get(), t.get());
             adapter.UpdateCommand.Parameters.Add(new MySqlParameter()
             {
@@ -55,8 +55,8 @@ namespace Project.DataAccessor
             });
             adapter.UpdateCommand.Parameters.Add(new MySqlParameter()
             {
-                SourceColumn = "position_customers",
-                ParameterName = "@position_customers"
+                SourceColumn = "phone",
+                ParameterName = "@phone"
             });
 
             //DELETE

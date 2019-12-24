@@ -33,10 +33,10 @@ namespace WebApplication3
         }
 
         [WebMethod]
-        public DataSet1 getMaterialss()
+        public DataSet1 getMaterials()
         {
             BusinessLogic BL = new BusinessLogic();
-            return BL.getMaterialss();
+            return BL.getMaterials();
         }
 
         [WebMethod]

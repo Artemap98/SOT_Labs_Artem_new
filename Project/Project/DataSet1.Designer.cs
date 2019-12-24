@@ -20,9 +20,9 @@ namespace Project {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("testdbDataSet")]
+    [global::System.Xml.Serialization.XmlRootAttribute("testdbDataSet1")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class testdbDataSet : global::System.Data.DataSet {
+    public partial class testdbDataSet1 : global::System.Data.DataSet {
         
         private customersDataTable tablecustomers;
         
@@ -46,7 +46,7 @@ namespace Project {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public testdbDataSet() {
+        public testdbDataSet1() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -57,7 +57,7 @@ namespace Project {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        protected testdbDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected testdbDataSet1(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -195,7 +195,7 @@ namespace Project {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            testdbDataSet cln = ((testdbDataSet)(base.Clone()));
+            testdbDataSet1 cln = ((testdbDataSet1)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -307,9 +307,9 @@ namespace Project {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "testdbDataSet";
+            this.DataSetName = "testdbDataSet1";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/testdbDataSet.xsd";
+            this.Namespace = "http://tempuri.org/testdbDataSet1.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tablecustomers = new customersDataTable();
@@ -328,7 +328,7 @@ namespace Project {
             this.Relations.Add(this.relationprices_material);
             this.relationservices_ibfk_1 = new global::System.Data.DataRelation("services_ibfk_1", new global::System.Data.DataColumn[] {
                         this.tablecustomers.idColumn}, new global::System.Data.DataColumn[] {
-                        this.tableservices.id_customersColumn}, false);
+                        this.tableservices.id_customerColumn}, false);
             this.Relations.Add(this.relationservices_ibfk_1);
             this.relationservices_ibfk_2 = new global::System.Data.DataRelation("services_ibfk_2", new global::System.Data.DataColumn[] {
                         this.tableprices.idColumn}, new global::System.Data.DataColumn[] {
@@ -381,7 +381,7 @@ namespace Project {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            testdbDataSet ds = new testdbDataSet();
+            testdbDataSet1 ds = new testdbDataSet1();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -674,7 +674,7 @@ namespace Project {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                testdbDataSet ds = new testdbDataSet();
+                testdbDataSet1 ds = new testdbDataSet1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -967,7 +967,7 @@ namespace Project {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                testdbDataSet ds = new testdbDataSet();
+                testdbDataSet1 ds = new testdbDataSet1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1209,7 +1209,6 @@ namespace Project {
                 this.columnname.AllowDBNull = false;
                 this.columnname.MaxLength = 150;
                 this.columnprice.AllowDBNull = false;
-                this.columnid_material.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1277,7 +1276,7 @@ namespace Project {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                testdbDataSet ds = new testdbDataSet();
+                testdbDataSet1 ds = new testdbDataSet1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1347,7 +1346,7 @@ namespace Project {
             
             private global::System.Data.DataColumn columnid_staff;
             
-            private global::System.Data.DataColumn columnid_customers;
+            private global::System.Data.DataColumn columnid_customer;
             
             private global::System.Data.DataColumn columnid_price;
             
@@ -1404,9 +1403,9 @@ namespace Project {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn id_customersColumn {
+            public global::System.Data.DataColumn id_customerColumn {
                 get {
-                    return this.columnid_customers;
+                    return this.columnid_customer;
                 }
             }
             
@@ -1511,7 +1510,7 @@ namespace Project {
             internal void InitVars() {
                 this.columnid = base.Columns["id"];
                 this.columnid_staff = base.Columns["id_staff"];
-                this.columnid_customers = base.Columns["id_customers"];
+                this.columnid_customer = base.Columns["id_customer"];
                 this.columnid_price = base.Columns["id_price"];
                 this.columnpayment = base.Columns["payment"];
             }
@@ -1523,8 +1522,8 @@ namespace Project {
                 base.Columns.Add(this.columnid);
                 this.columnid_staff = new global::System.Data.DataColumn("id_staff", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnid_staff);
-                this.columnid_customers = new global::System.Data.DataColumn("id_customers", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnid_customers);
+                this.columnid_customer = new global::System.Data.DataColumn("id_customer", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_customer);
                 this.columnid_price = new global::System.Data.DataColumn("id_price", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnid_price);
                 this.columnpayment = new global::System.Data.DataColumn("payment", typeof(int), null, global::System.Data.MappingType.Element);
@@ -1536,9 +1535,6 @@ namespace Project {
                 this.columnid.AutoIncrementStep = -1;
                 this.columnid.AllowDBNull = false;
                 this.columnid.Unique = true;
-                this.columnid_staff.AllowDBNull = false;
-                this.columnid_customers.AllowDBNull = false;
-                this.columnid_price.AllowDBNull = false;
                 this.columnpayment.AllowDBNull = false;
             }
             
@@ -1607,7 +1603,7 @@ namespace Project {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                testdbDataSet ds = new testdbDataSet();
+                testdbDataSet1 ds = new testdbDataSet1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1932,7 +1928,7 @@ namespace Project {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                testdbDataSet ds = new testdbDataSet();
+                testdbDataSet1 ds = new testdbDataSet1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -2160,7 +2156,12 @@ namespace Project {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public int id_material {
                 get {
-                    return ((int)(this[this.tableprices.id_materialColumn]));
+                    try {
+                        return ((int)(this[this.tableprices.id_materialColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'id_material\' in table \'prices\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableprices.id_materialColumn] = value;
@@ -2176,6 +2177,18 @@ namespace Project {
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["prices_material"]);
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isid_materialNull() {
+                return this.IsNull(this.tableprices.id_materialColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setid_materialNull() {
+                this[this.tableprices.id_materialColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2219,7 +2232,12 @@ namespace Project {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public int id_staff {
                 get {
-                    return ((int)(this[this.tableservices.id_staffColumn]));
+                    try {
+                        return ((int)(this[this.tableservices.id_staffColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'id_staff\' in table \'services\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableservices.id_staffColumn] = value;
@@ -2228,12 +2246,17 @@ namespace Project {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int id_customers {
+            public int id_customer {
                 get {
-                    return ((int)(this[this.tableservices.id_customersColumn]));
+                    try {
+                        return ((int)(this[this.tableservices.id_customerColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'id_customer\' in table \'services\' is DBNull.", e);
+                    }
                 }
                 set {
-                    this[this.tableservices.id_customersColumn] = value;
+                    this[this.tableservices.id_customerColumn] = value;
                 }
             }
             
@@ -2241,7 +2264,12 @@ namespace Project {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public int id_price {
                 get {
-                    return ((int)(this[this.tableservices.id_priceColumn]));
+                    try {
+                        return ((int)(this[this.tableservices.id_priceColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'id_price\' in table \'services\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableservices.id_priceColumn] = value;
@@ -2290,6 +2318,42 @@ namespace Project {
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["services_ibfk_3"]);
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isid_staffNull() {
+                return this.IsNull(this.tableservices.id_staffColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setid_staffNull() {
+                this[this.tableservices.id_staffColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isid_customerNull() {
+                return this.IsNull(this.tableservices.id_customerColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setid_customerNull() {
+                this[this.tableservices.id_customerColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isid_priceNull() {
+                return this.IsNull(this.tableservices.id_priceColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setid_priceNull() {
+                this[this.tableservices.id_priceColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -2545,7 +2609,7 @@ namespace Project {
         }
     }
 }
-namespace Project.testdbDataSetTableAdapters {
+namespace Project.testdbDataSet1TableAdapters {
     
     
     /// <summary>
@@ -2675,7 +2739,7 @@ namespace Project.testdbDataSetTableAdapters {
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM \'customers\' WHERE ((\'id\' = @p1) AND (\'fio\' = @p2) AND (\'phone\' = @p3)" +
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM `customers` WHERE ((`id` = @p1) AND (`fio` = @p2) AND (`phone` = @p3)" +
                 ")";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
@@ -2704,7 +2768,7 @@ namespace Project.testdbDataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(param);
             this._adapter.InsertCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO \'customers\' (\'fio\', \'phone\') VALUES (@p1, @p2)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO `customers` (`fio`, `phone`) VALUES (@p1, @p2)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
@@ -2724,8 +2788,8 @@ namespace Project.testdbDataSetTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE \'customers\' SET \'fio\' = @p1, \'phone\' = @p2 WHERE ((\'id\' = @p3) AND (\'fio\' " +
-                "= @p4) AND (\'phone\' = @p5))";
+            this._adapter.UpdateCommand.CommandText = "UPDATE `customers` SET `fio` = @p1, `phone` = @p2 WHERE ((`id` = @p3) AND (`fio` " +
+                "= @p4) AND (`phone` = @p5))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
@@ -2782,7 +2846,7 @@ namespace Project.testdbDataSetTableAdapters {
             this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[1];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT \'id\', \'fio\', \'phone\' FROM \'customers\'";
+            this._commandCollection[0].CommandText = "SELECT `id`, `fio`, `phone` FROM `customers`";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -2790,7 +2854,7 @@ namespace Project.testdbDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(testdbDataSet.customersDataTable dataTable) {
+        public virtual int Fill(testdbDataSet1.customersDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -2803,9 +2867,9 @@ namespace Project.testdbDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual testdbDataSet.customersDataTable GetData() {
+        public virtual testdbDataSet1.customersDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            testdbDataSet.customersDataTable dataTable = new testdbDataSet.customersDataTable();
+            testdbDataSet1.customersDataTable dataTable = new testdbDataSet1.customersDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -2813,14 +2877,14 @@ namespace Project.testdbDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(testdbDataSet.customersDataTable dataTable) {
+        public virtual int Update(testdbDataSet1.customersDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(testdbDataSet dataSet) {
+        public virtual int Update(testdbDataSet1 dataSet) {
             return this.Adapter.Update(dataSet, "customers");
         }
         
@@ -3080,8 +3144,8 @@ namespace Project.testdbDataSetTableAdapters {
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM \'materials\' WHERE ((\'id\' = @p1) AND (\'name\' = @p2) AND (\'manufacturer" +
-                "\' = @p3))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM `materials` WHERE ((`id` = @p1) AND (`name` = @p2) AND (`manufacturer" +
+                "` = @p3))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
@@ -3109,7 +3173,7 @@ namespace Project.testdbDataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(param);
             this._adapter.InsertCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO \'materials\' (\'name\', \'manufacturer\') VALUES (@p1, @p2)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO `materials` (`name`, `manufacturer`) VALUES (@p1, @p2)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
@@ -3129,8 +3193,8 @@ namespace Project.testdbDataSetTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE \'materials\' SET \'name\' = @p1, \'manufacturer\' = @p2 WHERE ((\'id\' = @p3) AND" +
-                " (\'name\' = @p4) AND (\'manufacturer\' = @p5))";
+            this._adapter.UpdateCommand.CommandText = "UPDATE `materials` SET `name` = @p1, `manufacturer` = @p2 WHERE ((`id` = @p3) AND" +
+                " (`name` = @p4) AND (`manufacturer` = @p5))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
@@ -3187,7 +3251,7 @@ namespace Project.testdbDataSetTableAdapters {
             this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[1];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT \'id\', \'name\', \'manufacturer\' FROM \'materials\'";
+            this._commandCollection[0].CommandText = "SELECT `id`, `name`, `manufacturer` FROM `materials`";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -3195,7 +3259,7 @@ namespace Project.testdbDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(testdbDataSet.materialsDataTable dataTable) {
+        public virtual int Fill(testdbDataSet1.materialsDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -3208,9 +3272,9 @@ namespace Project.testdbDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual testdbDataSet.materialsDataTable GetData() {
+        public virtual testdbDataSet1.materialsDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            testdbDataSet.materialsDataTable dataTable = new testdbDataSet.materialsDataTable();
+            testdbDataSet1.materialsDataTable dataTable = new testdbDataSet1.materialsDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -3218,14 +3282,14 @@ namespace Project.testdbDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(testdbDataSet.materialsDataTable dataTable) {
+        public virtual int Update(testdbDataSet1.materialsDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(testdbDataSet dataSet) {
+        public virtual int Update(testdbDataSet1 dataSet) {
             return this.Adapter.Update(dataSet, "materials");
         }
         
@@ -3486,8 +3550,8 @@ namespace Project.testdbDataSetTableAdapters {
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM \'prices\' WHERE ((\'id\' = @p1) AND (\'name\' = @p2) AND (\'price\' = @p3) A" +
-                "ND (\'id_material\' = @p4))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM `prices` WHERE ((`id` = @p1) AND (`name` = @p2) AND (`price` = @p3) A" +
+                "ND ((@p4 = 1 AND `id_material` IS NULL) OR (`id_material` = @p5)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
@@ -3520,10 +3584,19 @@ namespace Project.testdbDataSetTableAdapters {
             param.IsNullable = true;
             param.SourceColumn = "id_material";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p5";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "id_material";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             this._adapter.InsertCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO \'prices\' (\'name\', \'price\', \'id_material\') VALUES (@p1, @p2, @p3)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO `prices` (`name`, `price`, `id_material`) VALUES (@p1, @p2, @p3)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
@@ -3551,8 +3624,9 @@ namespace Project.testdbDataSetTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE \'prices\' SET \'name\' = @p1, \'price\' = @p2, \'id_material\' = @p3 WHERE ((\'id\'" +
-                " = @p4) AND (\'name\' = @p5) AND (\'price\' = @p6) AND (\'id_material\' = @p7))";
+            this._adapter.UpdateCommand.CommandText = "UPDATE `prices` SET `name` = @p1, `price` = @p2, `id_material` = @p3 WHERE ((`id`" +
+                " = @p4) AND (`name` = @p5) AND (`price` = @p6) AND ((@p7 = 1 AND `id_material` I" +
+                "S NULL) OR (`id_material` = @p8)))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
@@ -3609,6 +3683,15 @@ namespace Project.testdbDataSetTableAdapters {
             param.IsNullable = true;
             param.SourceColumn = "id_material";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p8";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "id_material";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
         }
         
@@ -3625,7 +3708,7 @@ namespace Project.testdbDataSetTableAdapters {
             this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[1];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT \'id\', \'name\', \'price\', \'id_material\' FROM \'prices\'";
+            this._commandCollection[0].CommandText = "SELECT `id`, `name`, `price`, `id_material` FROM `prices`";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -3633,7 +3716,7 @@ namespace Project.testdbDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(testdbDataSet.pricesDataTable dataTable) {
+        public virtual int Fill(testdbDataSet1.pricesDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -3646,9 +3729,9 @@ namespace Project.testdbDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual testdbDataSet.pricesDataTable GetData() {
+        public virtual testdbDataSet1.pricesDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            testdbDataSet.pricesDataTable dataTable = new testdbDataSet.pricesDataTable();
+            testdbDataSet1.pricesDataTable dataTable = new testdbDataSet1.pricesDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -3656,14 +3739,14 @@ namespace Project.testdbDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(testdbDataSet.pricesDataTable dataTable) {
+        public virtual int Update(testdbDataSet1.pricesDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(testdbDataSet dataSet) {
+        public virtual int Update(testdbDataSet1 dataSet) {
             return this.Adapter.Update(dataSet, "prices");
         }
         
@@ -3686,7 +3769,7 @@ namespace Project.testdbDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int p1, string p2, int p3, int p4) {
+        public virtual int Delete(int p1, string p2, int p3, global::System.Nullable<int> p5) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(p1));
             if ((p2 == null)) {
                 throw new global::System.ArgumentNullException("p2");
@@ -3695,7 +3778,14 @@ namespace Project.testdbDataSetTableAdapters {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(p2));
             }
             this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(p3));
-            this.Adapter.DeleteCommand.Parameters[3].Value = ((int)(p4));
+            if ((p5.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(p5.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -3716,7 +3806,7 @@ namespace Project.testdbDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string p1, int p2, int p3) {
+        public virtual int Insert(string p1, int p2, global::System.Nullable<int> p3) {
             if ((p1 == null)) {
                 throw new global::System.ArgumentNullException("p1");
             }
@@ -3724,7 +3814,12 @@ namespace Project.testdbDataSetTableAdapters {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((string)(p1));
             }
             this.Adapter.InsertCommand.Parameters[1].Value = ((int)(p2));
-            this.Adapter.InsertCommand.Parameters[2].Value = ((int)(p3));
+            if ((p3.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((int)(p3.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -3745,7 +3840,7 @@ namespace Project.testdbDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string p1, int p2, int p3, int p4, string p5, int p6, int p7) {
+        public virtual int Update(string p1, int p2, global::System.Nullable<int> p3, int p4, string p5, int p6, global::System.Nullable<int> p8) {
             if ((p1 == null)) {
                 throw new global::System.ArgumentNullException("p1");
             }
@@ -3753,7 +3848,12 @@ namespace Project.testdbDataSetTableAdapters {
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(p1));
             }
             this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(p2));
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(p3));
+            if ((p3.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(p3.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
             this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(p4));
             if ((p5 == null)) {
                 throw new global::System.ArgumentNullException("p5");
@@ -3762,7 +3862,14 @@ namespace Project.testdbDataSetTableAdapters {
                 this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(p5));
             }
             this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(p6));
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(p7));
+            if ((p8.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(p8.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -3903,14 +4010,16 @@ namespace Project.testdbDataSetTableAdapters {
             tableMapping.DataSetTable = "services";
             tableMapping.ColumnMappings.Add("id", "id");
             tableMapping.ColumnMappings.Add("id_staff", "id_staff");
-            tableMapping.ColumnMappings.Add("id_customers", "id_customers");
+            tableMapping.ColumnMappings.Add("id_customer", "id_customer");
             tableMapping.ColumnMappings.Add("id_price", "id_price");
             tableMapping.ColumnMappings.Add("payment", "payment");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM \'services\' WHERE ((\'id\' = @p1) AND (\'id_staff\' = @p2) AND (\'id_custom" +
-                "ers\' = @p3) AND (\'id_price\' = @p4) AND (\'payment\' = @p5))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM `services` WHERE ((`id` = @p1) AND ((@p2 = 1 AND `id_staff` IS NULL) " +
+                "OR (`id_staff` = @p3)) AND ((@p4 = 1 AND `id_customer` IS NULL) OR (`id_customer" +
+                "` = @p5)) AND ((@p6 = 1 AND `id_price` IS NULL) OR (`id_price` = @p7)) AND (`pay" +
+                "ment` = @p8))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
@@ -3927,13 +4036,14 @@ namespace Project.testdbDataSetTableAdapters {
             param.IsNullable = true;
             param.SourceColumn = "id_staff";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p3";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "id_customers";
+            param.SourceColumn = "id_staff";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
@@ -3941,11 +4051,37 @@ namespace Project.testdbDataSetTableAdapters {
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
+            param.SourceColumn = "id_customer";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p5";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "id_customer";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p6";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "id_price";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p7";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
             param.SourceColumn = "id_price";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p5";
+            param.ParameterName = "@p8";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
@@ -3954,8 +4090,8 @@ namespace Project.testdbDataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(param);
             this._adapter.InsertCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO \'services\' (\'id_staff\', \'id_customers\', \'id_price\', \'payment\') VALUES" +
-                " (@p1, @p2, @p3, @p4)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO `services` (`id_staff`, `id_customer`, `id_price`, `payment`) VALUES " +
+                "(@p1, @p2, @p3, @p4)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
@@ -3970,7 +4106,7 @@ namespace Project.testdbDataSetTableAdapters {
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "id_customers";
+            param.SourceColumn = "id_customer";
             param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
@@ -3991,9 +4127,7 @@ namespace Project.testdbDataSetTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE \'services\' SET \'id_staff\' = @p1, \'id_customers\' = @p2, \'id_price\' = @p3, \'" +
-                "payment\' = @p4 WHERE ((\'id\' = @p5) AND (\'id_staff\' = @p6) AND (\'id_customers\' = " +
-                "@p7) AND (\'id_price\' = @p8) AND (\'payment\' = @p9))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE `services` SET `id_staff` = @p1, `id_customer` = @p2, `id_price` = @p3, `payment` = @p4 WHERE ((`id` = @p5) AND ((@p6 = 1 AND `id_staff` IS NULL) OR (`id_staff` = @p7)) AND ((@p8 = 1 AND `id_customer` IS NULL) OR (`id_customer` = @p9)) AND ((@p10 = 1 AND `id_price` IS NULL) OR (`id_price` = @p11)) AND (`payment` = @p12))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
@@ -4008,7 +4142,7 @@ namespace Project.testdbDataSetTableAdapters {
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "id_customers";
+            param.SourceColumn = "id_customer";
             param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
@@ -4042,13 +4176,14 @@ namespace Project.testdbDataSetTableAdapters {
             param.IsNullable = true;
             param.SourceColumn = "id_staff";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p7";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "id_customers";
+            param.SourceColumn = "id_staff";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
@@ -4056,11 +4191,37 @@ namespace Project.testdbDataSetTableAdapters {
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
+            param.SourceColumn = "id_customer";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p9";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "id_customer";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p10";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "id_price";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p11";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
             param.SourceColumn = "id_price";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p9";
+            param.ParameterName = "@p12";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
@@ -4082,7 +4243,7 @@ namespace Project.testdbDataSetTableAdapters {
             this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[1];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT \'id\', \'id_staff\', \'id_customers\', \'id_price\', \'payment\' FROM \'services\'";
+            this._commandCollection[0].CommandText = "SELECT `id`, `id_staff`, `id_customer`, `id_price`, `payment` FROM `services`";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -4090,7 +4251,7 @@ namespace Project.testdbDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(testdbDataSet.servicesDataTable dataTable) {
+        public virtual int Fill(testdbDataSet1.servicesDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -4103,9 +4264,9 @@ namespace Project.testdbDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual testdbDataSet.servicesDataTable GetData() {
+        public virtual testdbDataSet1.servicesDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            testdbDataSet.servicesDataTable dataTable = new testdbDataSet.servicesDataTable();
+            testdbDataSet1.servicesDataTable dataTable = new testdbDataSet1.servicesDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -4113,14 +4274,14 @@ namespace Project.testdbDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(testdbDataSet.servicesDataTable dataTable) {
+        public virtual int Update(testdbDataSet1.servicesDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(testdbDataSet dataSet) {
+        public virtual int Update(testdbDataSet1 dataSet) {
             return this.Adapter.Update(dataSet, "services");
         }
         
@@ -4143,12 +4304,33 @@ namespace Project.testdbDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int p1, int p2, int p3, int p4, int p5) {
+        public virtual int Delete(int p1, global::System.Nullable<int> p3, global::System.Nullable<int> p5, global::System.Nullable<int> p7, int p8) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(p1));
-            this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(p2));
-            this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(p3));
-            this.Adapter.DeleteCommand.Parameters[3].Value = ((int)(p4));
-            this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(p5));
+            if ((p3.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(p3.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((p5.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(p5.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((p7.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((int)(p7.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.DeleteCommand.Parameters[7].Value = ((int)(p8));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -4169,10 +4351,25 @@ namespace Project.testdbDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int p1, int p2, int p3, int p4) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(p1));
-            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(p2));
-            this.Adapter.InsertCommand.Parameters[2].Value = ((int)(p3));
+        public virtual int Insert(global::System.Nullable<int> p1, global::System.Nullable<int> p2, global::System.Nullable<int> p3, int p4) {
+            if ((p1.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((int)(p1.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((p2.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((int)(p2.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((p3.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((int)(p3.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
             this.Adapter.InsertCommand.Parameters[3].Value = ((int)(p4));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -4194,16 +4391,52 @@ namespace Project.testdbDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int p1, int p2, int p3, int p4, int p5, int p6, int p7, int p8, int p9) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(p1));
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(p2));
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(p3));
+        public virtual int Update(global::System.Nullable<int> p1, global::System.Nullable<int> p2, global::System.Nullable<int> p3, int p4, int p5, global::System.Nullable<int> p7, global::System.Nullable<int> p9, global::System.Nullable<int> p11, int p12) {
+            if ((p1.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(p1.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((p2.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(p2.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((p3.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(p3.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
             this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(p4));
             this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(p5));
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(p6));
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(p7));
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(p8));
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(p9));
+            if ((p7.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(p7.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            if ((p9.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(p9.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            if ((p11.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(p11.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(p12));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -4350,8 +4583,8 @@ namespace Project.testdbDataSetTableAdapters {
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM \'staff\' WHERE ((\'id\' = @p1) AND (\'fio\' = @p2) AND (\'position\' = @p3) " +
-                "AND (\'phone\' = @p4) AND (\'address\' = @p5))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM `staff` WHERE ((`id` = @p1) AND (`fio` = @p2) AND (`position` = @p3) " +
+                "AND (`phone` = @p4) AND (`address` = @p5))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
@@ -4395,7 +4628,7 @@ namespace Project.testdbDataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(param);
             this._adapter.InsertCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO \'staff\' (\'fio\', \'position\', \'phone\', \'address\') VALUES (@p1, @p2, @p3" +
+            this._adapter.InsertCommand.CommandText = "INSERT INTO `staff` (`fio`, `position`, `phone`, `address`) VALUES (@p1, @p2, @p3" +
                 ", @p4)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
@@ -4432,9 +4665,9 @@ namespace Project.testdbDataSetTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE \'staff\' SET \'fio\' = @p1, \'position\' = @p2, \'phone\' = @p3, \'address\' = @p4 " +
-                "WHERE ((\'id\' = @p5) AND (\'fio\' = @p6) AND (\'position\' = @p7) AND (\'phone\' = @p8)" +
-                " AND (\'address\' = @p9))";
+            this._adapter.UpdateCommand.CommandText = "UPDATE `staff` SET `fio` = @p1, `position` = @p2, `phone` = @p3, `address` = @p4 " +
+                "WHERE ((`id` = @p5) AND (`fio` = @p6) AND (`position` = @p7) AND (`phone` = @p8)" +
+                " AND (`address` = @p9))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
@@ -4523,7 +4756,7 @@ namespace Project.testdbDataSetTableAdapters {
             this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[1];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT \'id\', \'fio\', \'position\', \'phone\', \'address\' FROM \'staff\'";
+            this._commandCollection[0].CommandText = "SELECT `id`, `fio`, `position`, `phone`, `address` FROM `staff`";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -4531,7 +4764,7 @@ namespace Project.testdbDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(testdbDataSet.staffDataTable dataTable) {
+        public virtual int Fill(testdbDataSet1.staffDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -4544,9 +4777,9 @@ namespace Project.testdbDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual testdbDataSet.staffDataTable GetData() {
+        public virtual testdbDataSet1.staffDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            testdbDataSet.staffDataTable dataTable = new testdbDataSet.staffDataTable();
+            testdbDataSet1.staffDataTable dataTable = new testdbDataSet1.staffDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -4554,14 +4787,14 @@ namespace Project.testdbDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(testdbDataSet.staffDataTable dataTable) {
+        public virtual int Update(testdbDataSet1.staffDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(testdbDataSet dataSet) {
+        public virtual int Update(testdbDataSet1 dataSet) {
             return this.Adapter.Update(dataSet, "staff");
         }
         
@@ -4925,7 +5158,7 @@ namespace Project.testdbDataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateUpdatedRows(testdbDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(testdbDataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._materialsTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.materials.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
@@ -4980,7 +5213,7 @@ namespace Project.testdbDataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateInsertedRows(testdbDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(testdbDataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._materialsTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.materials.Select(null, null, global::System.Data.DataViewRowState.Added);
@@ -5030,7 +5263,7 @@ namespace Project.testdbDataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateDeletedRows(testdbDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(testdbDataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             if ((this._servicesTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.services.Select(null, null, global::System.Data.DataViewRowState.Deleted);
@@ -5104,7 +5337,7 @@ namespace Project.testdbDataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public virtual int UpdateAll(testdbDataSet dataSet) {
+        public virtual int UpdateAll(testdbDataSet1 dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }

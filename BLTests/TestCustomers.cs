@@ -35,8 +35,8 @@ namespace BLTests
 
             Assert.That(list.Count, Is.EqualTo(8));
             Assert.That((int)(list[0]["id"]), Is.EqualTo(1));
-            Assert.That((string)(list[0]["fio"]), Is.EqualTo("Бревна буковые"));
-            Assert.That((string)(list[0]["phone"]), Is.EqualTo("02.20.12.112"));  
+            Assert.That((string)(list[0]["fio"]), Is.EqualTo("Ямских Иларион Миронович"));
+            Assert.That((string)(list[0]["phone"]), Is.EqualTo("89136574356"));  
         }
 
         [Test]
@@ -48,21 +48,21 @@ namespace BLTests
             Assert.That(list.Count, Is.EqualTo(1));
 
             Assert.That((int)(list[0]["id"]), Is.EqualTo(1));
-            Assert.That((string)(list[0]["fio"]), Is.EqualTo("Бревна буковые"));
-            Assert.That((string)(list[0]["phone"]), Is.EqualTo("02.20.12.112"));  
+            Assert.That((string)(list[0]["fio"]), Is.EqualTo("Ямских Иларион Миронович"));
+            Assert.That((string)(list[0]["phone"]), Is.EqualTo("89136574356"));  
         }
 
         [Test]
         public void CustomersByName()
         {
             DataSet1 dataSet1 = BL.getCustomers();
-            List<DataRow> list = dataSet1.customers.Select("fio = 'Бревна буковые'").OfType<DataRow>().ToList();
+            List<DataRow> list = dataSet1.customers.Select("fio = 'Ямских Иларион Миронович'").OfType<DataRow>().ToList();
 
             Assert.That(list.Count, Is.EqualTo(1));
 
             Assert.That((int)(list[0]["id"]), Is.EqualTo(1));
-            Assert.That((string)(list[0]["fio"]), Is.EqualTo("Бревна буковые"));
-            Assert.That((string)(list[0]["phone"]), Is.EqualTo("02.20.12.112"));
+            Assert.That((string)(list[0]["fio"]), Is.EqualTo("Ямских Иларион Миронович"));
+            Assert.That((string)(list[0]["phone"]), Is.EqualTo("89136574356"));
         }
 
         [Test]
@@ -70,13 +70,13 @@ namespace BLTests
         {
             DataSet1 dataSet1 = BL.getCustomers();
 
-            List<DataRow> list = dataSet1.customers.Select("phone = '02.20.12.112'").OfType<DataRow>().ToList();
+            List<DataRow> list = dataSet1.customers.Select("phone = '89136574356'").OfType<DataRow>().ToList();
 
             Assert.That(list.Count, Is.EqualTo(1));
 
             Assert.That((int)(list[0]["id"]), Is.EqualTo(1));
-            Assert.That((string)(list[0]["fio"]), Is.EqualTo("Бревна буковые"));
-            Assert.That((string)(list[0]["phone"]), Is.EqualTo("02.20.12.112"));
+            Assert.That((string)(list[0]["fio"]), Is.EqualTo("Ямских Иларион Миронович"));
+            Assert.That((string)(list[0]["phone"]), Is.EqualTo("89136574356"));
         }
 
         [Test]
@@ -147,8 +147,8 @@ namespace BLTests
 ///            
             DataRow rowForAdded = dataSetRead.customers.NewRow();
 
-            rowForAdded["fio"] = "Бревна буковые";
-            rowForAdded["phone"] = "02.20.12.112";
+            rowForAdded["fio"] = "Ямских Иларион Миронович";
+            rowForAdded["phone"] = "89136574356";
 
             dataSetRead.customers.Rows.Add(rowForAdded);
             List<DataRow> list_2 = dataSetRead.customers.Select("").OfType<DataRow>().ToList();
@@ -184,7 +184,7 @@ namespace BLTests
         {
             DataSet1 dataSetRead = BL.getCustomers();
 
-            List<DataRow> rows_list = dataSetRead.customers.Select("fio = 'Бревна буковые'").OfType<DataRow>().ToList();
+            List<DataRow> rows_list = dataSetRead.customers.Select("fio = 'Ямских Иларион Миронович'").OfType<DataRow>().ToList();
             // Сортируем строки по id в порядке возрастания
             rows_list.Sort((x, y) => ((int)x["id"]).CompareTo((int)y["id"]));
             // Количество записей до удаления
@@ -192,7 +192,7 @@ namespace BLTests
             Assert.That(countRowBefore, Is.EqualTo(1));
 
             //удаляем
-            List<DataRow> list_1 = dataSetRead.customers.Select("fio = 'Бревна буковые'").OfType<DataRow>().ToList();
+            List<DataRow> list_1 = dataSetRead.customers.Select("fio = 'Ямских Иларион Миронович'").OfType<DataRow>().ToList();
             foreach (DataRow rowForDel in list_1)
             {
                 //dataSetRead.customers.Rows.Remove(rowForDel);
@@ -205,7 +205,7 @@ namespace BLTests
 
             DataSet1 dataSet_AfterDel = BL.getCustomers();
             //BL.updateCustomers(dataSet_AfterInsert);
-            List<DataRow> rows_list_AfterInsert = dataSet_AfterDel.customers.Select("fio = 'Бревна буковые'").OfType<DataRow>().ToList();
+            List<DataRow> rows_list_AfterInsert = dataSet_AfterDel.customers.Select("fio = 'Ямских Иларион Миронович'").OfType<DataRow>().ToList();
 
             Assert.That(rows_list_AfterInsert.Count, Is.EqualTo(0));
         }
