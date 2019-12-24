@@ -52,10 +52,10 @@ namespace DATests
             list.Sort((x, y) => ((int)x["id"]).CompareTo((int)y["id"]));  //сортируем по ид
 
             Assert.That(1, Is.EqualTo(1));
-            Assert.That(list.Count, Is.EqualTo(2));
+            Assert.That(list.Count, Is.EqualTo(6));
             Assert.That((int)(list[0]["id"]), Is.EqualTo(1));
-            Assert.That((string)(list[0]["name"]), Is.EqualTo("000001"));
-            Assert.That((int)(list[0]["id_material"]), Is.EqualTo(2));
+            Assert.That((string)(list[0]["name"]), Is.EqualTo("Лечение заболеваний твёрдых тканей зуба"));
+            Assert.That((int)(list[0]["id_material"]), Is.EqualTo(3));
         }
 
         [Test]
@@ -87,8 +87,8 @@ namespace DATests
             Assert.That(list.Count, Is.EqualTo(1));
 
             Assert.That((int)(list[0]["id"]), Is.EqualTo(1));
-            Assert.That((string)(list[0]["name"]), Is.EqualTo("000001"));
-            Assert.That((int)(list[0]["id_material"]), Is.EqualTo(2));
+            Assert.That((string)(list[0]["name"]), Is.EqualTo("Лечение заболеваний твёрдых тканей зуба"));
+            Assert.That((int)(list[0]["id_material"]), Is.EqualTo(3));
         }
 
         [Test]
@@ -115,13 +115,13 @@ namespace DATests
                 connection.close();
             }
 
-            List<DataRow> list = dataSet1.prices.Select("name = '000001'").OfType<DataRow>().ToList();
+            List<DataRow> list = dataSet1.prices.Select("name = 'Лечение заболеваний твёрдых тканей зуба'").OfType<DataRow>().ToList();
 
             Assert.That(list.Count, Is.EqualTo(1));
 
             Assert.That((int)(list[0]["id"]), Is.EqualTo(1));
-            Assert.That((string)(list[0]["name"]), Is.EqualTo("000001"));
-            Assert.That((int)(list[0]["id_material"]), Is.EqualTo(2));
+            Assert.That((string)(list[0]["name"]), Is.EqualTo("Лечение заболеваний твёрдых тканей зуба"));
+            Assert.That((int)(list[0]["id_material"]), Is.EqualTo(3));
         }
 
         [Test]
@@ -148,13 +148,13 @@ namespace DATests
                 connection.close();
             }
 
-            List<DataRow> list = dataSet1.prices.Select("id_material = '2'").OfType<DataRow>().ToList();
+            List<DataRow> list = dataSet1.prices.Select("id_material = '3'").OfType<DataRow>().ToList();
 
             Assert.That(list.Count, Is.EqualTo(1));
 
             Assert.That((int)(list[0]["id"]), Is.EqualTo(1));
-            Assert.That((string)(list[0]["name"]), Is.EqualTo("000001"));
-            Assert.That((int)(list[0]["id_material"]), Is.EqualTo(2));
+            Assert.That((string)(list[0]["name"]), Is.EqualTo("Лечение заболеваний твёрдых тканей зуба"));
+            Assert.That((int)(list[0]["id_material"]), Is.EqualTo(3));
         }
 
         [Test]
@@ -240,7 +240,7 @@ namespace DATests
             // Сортируем по id
             list_3.Sort((x, y) => ((int)x["id"]).CompareTo((int)y["id"]));
             // Проверяем что записей столько же
-            Assert.That(list_3.Count, Is.EqualTo(2));
+            Assert.That(list_3.Count, Is.EqualTo(6));
 
             // Достаем ту же запись
             List<DataRow> rows_list = dataSet1.prices.Select("id = " + oldM.id).OfType<DataRow>().ToList();
@@ -299,9 +299,9 @@ namespace DATests
             DataRow rowForAdded = dataSetRead.prices.NewRow();
 
 
-            rowForAdded["name"] = "000000";
-            rowForAdded["price"] = "2011-02-20";
-            rowForAdded["id_material"] = "2";
+            rowForAdded["name"] = "Косметическая процедура";
+            rowForAdded["price"] = "43532";
+            rowForAdded["id_material"] = "5";
 
             dataSetRead.prices.Rows.Add(rowForAdded);
 
@@ -381,7 +381,7 @@ namespace DATests
                 absTran_Read = absCon_Read.beginTransaction();
                 daPrices.Read(absCon_Read, absTran_Read, dataSetRead);
 
-                List<DataRow> rows_list = dataSetRead.prices.Select("name = '000001'").OfType<DataRow>().ToList();
+                List<DataRow> rows_list = dataSetRead.prices.Select("name = 'Лечение заболеваний твёрдых тканей зуба'").OfType<DataRow>().ToList();
                 // Сортируем строки по id в порядке возрастания
                 rows_list.Sort((x, y) => ((int)x["id"]).CompareTo((int)y["id"]));
                 // Количество записей до удаления
@@ -404,7 +404,7 @@ namespace DATests
             AbstractConnection absCon_Update = null;
             AbstractTransaction absTran_Update = null;
 
-            List<DataRow> list_1 = dataSetRead.prices.Select("name = '000001'").OfType<DataRow>().ToList();
+            List<DataRow> list_1 = dataSetRead.prices.Select("name = 'Лечение заболеваний твёрдых тканей зуба'").OfType<DataRow>().ToList();
 
             foreach (DataRow rowForDel in list_1)
             {
@@ -453,7 +453,7 @@ namespace DATests
                 absCon_AfterInsert.close();
             }
 
-            List<DataRow> rows_list_AfterInsert = dataSetRead.prices.Select("name = '000001'").OfType<DataRow>().ToList();
+            List<DataRow> rows_list_AfterInsert = dataSetRead.prices.Select("name = 'Лечение заболеваний твёрдых тканей зуба'").OfType<DataRow>().ToList();
 
             Assert.That(rows_list_AfterInsert.Count, Is.EqualTo(0));
         }

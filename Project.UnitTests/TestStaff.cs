@@ -54,9 +54,9 @@ namespace DATests
             Assert.That(1, Is.EqualTo(1));
             Assert.That(list.Count, Is.EqualTo(15));
             Assert.That((int)(list[0]["id"]), Is.EqualTo(4));
-            Assert.That((string)(list[0]["fio"]), Is.EqualTo("Миллиметр"));
-            Assert.That((string)(list[0]["position"]), Is.EqualTo("003"));
-            Assert.That((string)(list[0]["phone"]), Is.EqualTo("мм"));
+            Assert.That((string)(list[0]["fio"]), Is.EqualTo("Кулешов Юрий Викторович"));
+            Assert.That((string)(list[0]["position"]), Is.EqualTo("Главный врач Стоматолог-хирург"));
+            Assert.That((string)(list[0]["phone"]), Is.EqualTo("+79134568712"));
         }
 
         [Test]
@@ -88,9 +88,9 @@ namespace DATests
             Assert.That(list.Count, Is.EqualTo(1));
 
             Assert.That((int)(list[0]["id"]), Is.EqualTo(4));
-            Assert.That((string)(list[0]["fio"]), Is.EqualTo("Миллиметр"));
-            Assert.That((string)(list[0]["position"]), Is.EqualTo("003"));
-            Assert.That((string)(list[0]["phone"]), Is.EqualTo("мм"));
+            Assert.That((string)(list[0]["fio"]), Is.EqualTo("Кулешов Юрий Викторович"));
+            Assert.That((string)(list[0]["position"]), Is.EqualTo("Главный врач Стоматолог-хирург"));
+            Assert.That((string)(list[0]["phone"]), Is.EqualTo("+79134568712"));
         }
 
         [Test]
@@ -117,14 +117,14 @@ namespace DATests
                 connection.close();
             }
 
-            List<DataRow> list = dataSet1.staff.Select("fio = 'Миллиметр'").OfType<DataRow>().ToList();
+            List<DataRow> list = dataSet1.staff.Select("fio = 'Кулешов Юрий Викторович'").OfType<DataRow>().ToList();
 
             Assert.That(list.Count, Is.EqualTo(1));
 
             Assert.That((int)(list[0]["id"]), Is.EqualTo(4));
-            Assert.That((string)(list[0]["fio"]), Is.EqualTo("Миллиметр"));
-            Assert.That((string)(list[0]["position"]), Is.EqualTo("003"));
-            Assert.That((string)(list[0]["phone"]), Is.EqualTo("мм"));
+            Assert.That((string)(list[0]["fio"]), Is.EqualTo("Кулешов Юрий Викторович"));
+            Assert.That((string)(list[0]["position"]), Is.EqualTo("Главный врач Стоматолог-хирург"));
+            Assert.That((string)(list[0]["phone"]), Is.EqualTo("+79134568712"));
         }
 
         [Test]
@@ -151,14 +151,14 @@ namespace DATests
                 connection.close();
             }
 
-            List<DataRow> list = dataSet1.staff.Select("position = '003'").OfType<DataRow>().ToList();
+            List<DataRow> list = dataSet1.staff.Select("position = 'Главный врач Стоматолог-хирург'").OfType<DataRow>().ToList();
 
             Assert.That(list.Count, Is.EqualTo(1));
 
             Assert.That((int)(list[0]["id"]), Is.EqualTo(4));
-            Assert.That((string)(list[0]["fio"]), Is.EqualTo("Миллиметр"));
-            Assert.That((string)(list[0]["position"]), Is.EqualTo("003"));
-            Assert.That((string)(list[0]["phone"]), Is.EqualTo("мм"));
+            Assert.That((string)(list[0]["fio"]), Is.EqualTo("Кулешов Юрий Викторович"));
+            Assert.That((string)(list[0]["position"]), Is.EqualTo("Главный врач Стоматолог-хирург"));
+            Assert.That((string)(list[0]["phone"]), Is.EqualTo("+79134568712"));
         }
 
         [Test]
@@ -303,10 +303,10 @@ namespace DATests
             DataRow rowForAdded = dataSetRead.staff.NewRow();
 
 
-            rowForAdded["fio"] = "Миллиметр";
-            rowForAdded["position"] = "003";
-            rowForAdded["phone"] = "мм";
-
+            rowForAdded["fio"] = "Кулешов Юрий Викторович";
+            rowForAdded["position"] = "Главный врач Стоматолог-хирург";
+            rowForAdded["phone"] = "+79134568712";
+            rowForAdded["address"] = "Полиграфическая Ул., дом 4, кв. 97";
             dataSetRead.staff.Rows.Add(rowForAdded);
 
             List<DataRow> list_2 = dataSetRead.staff.Select("").OfType<DataRow>().ToList();
@@ -386,7 +386,7 @@ namespace DATests
                 absTran_Read = absCon_Read.beginTransaction();
                 daStaff.Read(absCon_Read, absTran_Read, dataSetRead);
 
-                List<DataRow> rows_list = dataSetRead.staff.Select("fio = 'Миллиметр'").OfType<DataRow>().ToList();
+                List<DataRow> rows_list = dataSetRead.staff.Select("fio = 'Кулешов Юрий Викторович'").OfType<DataRow>().ToList();
                 // Сортируем строки по id в порядке возрастания
                 rows_list.Sort((x, y) => ((int)x["id"]).CompareTo((int)y["id"]));
                 // Количество записей до удаления
@@ -409,7 +409,7 @@ namespace DATests
             AbstractConnection absCon_Update = null;
             AbstractTransaction absTran_Update = null;
 
-            List<DataRow> list_1 = dataSetRead.staff.Select("fio = 'Миллиметр'").OfType<DataRow>().ToList();
+            List<DataRow> list_1 = dataSetRead.staff.Select("fio = 'Кулешов Юрий Викторович'").OfType<DataRow>().ToList();
 
             foreach (DataRow rowForDel in list_1)
             {
@@ -458,7 +458,7 @@ namespace DATests
                 absCon_AfterInsert.close();
             }
 
-            List<DataRow> rows_list_AfterInsert = dataSetRead.staff.Select("fio = 'Миллиметр'").OfType<DataRow>().ToList();
+            List<DataRow> rows_list_AfterInsert = dataSetRead.staff.Select("fio = 'Кулешов Юрий Викторович'").OfType<DataRow>().ToList();
 
             Assert.That(rows_list_AfterInsert.Count, Is.EqualTo(0));
         }

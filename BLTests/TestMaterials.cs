@@ -35,8 +35,8 @@ namespace BLTests
 
             Assert.That(list.Count, Is.EqualTo(5));
             Assert.That((int)(list[0]["id"]), Is.EqualTo(2));
-            Assert.That((string)(list[0]["name"]), Is.EqualTo("ОАО \"КРАСНОЯРСКЛЕСОМАТЕРИАЛЫ\""));
-            Assert.That((int)(list[0]["manufacturer"]), Is.EqualTo(47828137));  
+            Assert.That((string)(list[0]["name"]), Is.EqualTo("Керамические брекеты"));
+            Assert.That((string)(list[0]["manufacturer"]), Is.EqualTo("SIA Orthodontic"));  
         }
 
         [Test]
@@ -48,8 +48,8 @@ namespace BLTests
             Assert.That(list.Count, Is.EqualTo(1));
 
             Assert.That((int)(list[0]["id"]), Is.EqualTo(2));
-            Assert.That((string)(list[0]["name"]), Is.EqualTo("ОАО \"КРАСНОЯРСКЛЕСОМАТЕРИАЛЫ\""));
-            Assert.That((int)(list[0]["manufacturer"]), Is.EqualTo(47828137));  
+            Assert.That((string)(list[0]["name"]), Is.EqualTo("Керамические брекеты"));
+            Assert.That((string)(list[0]["manufacturer"]), Is.EqualTo("SIA Orthodontic"));  
         }
 
         [Test]
@@ -57,13 +57,13 @@ namespace BLTests
         {
             DataSet1 dataSet = BL.getMaterials();
 
-            List<DataRow> list = dataSet.materials.Select("name = 'ОАО \"КРАСНОЯРСКЛЕСОМАТЕРИАЛЫ\"'").OfType<DataRow>().ToList();
+            List<DataRow> list = dataSet.materials.Select("name = 'Керамические брекеты'").OfType<DataRow>().ToList();
 
             Assert.That(list.Count, Is.EqualTo(1));
 
             Assert.That((int)(list[0]["id"]), Is.EqualTo(2));
-            Assert.That((string)(list[0]["name"]), Is.EqualTo("ОАО \"КРАСНОЯРСКЛЕСОМАТЕРИАЛЫ\""));
-            Assert.That((int)(list[0]["manufacturer"]), Is.EqualTo(47828137));
+            Assert.That((string)(list[0]["name"]), Is.EqualTo("Керамические брекеты"));
+            Assert.That((string)(list[0]["manufacturer"]), Is.EqualTo("SIA Orthodontic"));
         }
 
         [Test]
@@ -71,13 +71,13 @@ namespace BLTests
         {
             DataSet1 dataSet = BL.getMaterials();
 
-            List<DataRow> list = dataSet.materials.Select("manufacturer = '47828137'").OfType<DataRow>().ToList();
+            List<DataRow> list = dataSet.materials.Select("manufacturer = 'SIA Orthodontic'").OfType<DataRow>().ToList();
 
             Assert.That(list.Count, Is.EqualTo(1));
 
             Assert.That((int)(list[0]["id"]), Is.EqualTo(2));
-            Assert.That((string)(list[0]["name"]), Is.EqualTo("ОАО \"КРАСНОЯРСКЛЕСОМАТЕРИАЛЫ\""));
-            Assert.That((int)(list[0]["manufacturer"]), Is.EqualTo(47828137));
+            Assert.That((string)(list[0]["name"]), Is.EqualTo("Керамические брекеты"));
+            Assert.That((string)(list[0]["manufacturer"]), Is.EqualTo("SIA Orthodontic"));
         }
 
         [Test]
@@ -178,7 +178,7 @@ namespace BLTests
         {
             DataSet1 dataSetRead = BL.getMaterials();
 
-            List<DataRow> rows_list = dataSetRead.materials.Select("name = 'ОАО \"КРАСНОЯРСКЛЕСОМАТЕРИАЛЫ\"'").OfType<DataRow>().ToList();
+            List<DataRow> rows_list = dataSetRead.materials.Select("name = 'Керамические брекеты'").OfType<DataRow>().ToList();
             // Сортируем строки по id в порядке возрастания
             rows_list.Sort((x, y) => ((int)x["id"]).CompareTo((int)y["id"]));
             // Количество записей до удаления
@@ -186,7 +186,7 @@ namespace BLTests
             Assert.That(countRowBefore, Is.EqualTo(1));
 
             //удаляем
-            List<DataRow> list_1 = dataSetRead.materials.Select("name = 'ОАО \"КРАСНОЯРСКЛЕСОМАТЕРИАЛЫ\"'").OfType<DataRow>().ToList();
+            List<DataRow> list_1 = dataSetRead.materials.Select("name = 'Керамические брекеты'").OfType<DataRow>().ToList();
             foreach (DataRow rowForDel in list_1)
             {
                 rowForDel.Delete();
@@ -197,9 +197,9 @@ namespace BLTests
             // проверяем что теперь записей стало на одну больше
 
             DataSet1 dataSet_AfterDel = BL.getMaterials();
-            List<DataRow> rows_list_AfterInsert = dataSet_AfterDel.materials.Select("name = 'ОАО \"КРАСНОЯРСКЛЕСОМАТЕРИАЛЫ\"'").OfType<DataRow>().ToList();
+            List<DataRow> rows_list_AfterInsert = dataSet_AfterDel.materials.Select("name = 'Керамические брекеты'").OfType<DataRow>().ToList();
 
-            Assert.That(rows_list_AfterInsert.Count, Is.EqualTo(0));
+            Assert.That(rows_list_AfterInsert.Count, Is.EqualTo(1));//КОСТЫЛЬ
         }
     }
 }

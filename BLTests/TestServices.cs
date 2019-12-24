@@ -30,32 +30,32 @@ namespace BLTests
         {
             DataSet1 dataSet = BL.getServicess();
             List<DataRow> list = dataSet.services.Select().OfType<DataRow>().ToList();
-            list.Sort((x, y) => ((int)x["id_"]).CompareTo((int)y["id_"]));  //сортируем по ид
+            list.Sort((x, y) => ((int)x["id"]).CompareTo((int)y["id"]));  //сортируем по ид
 
             Assert.That(1, Is.EqualTo(1));
             Assert.That(list.Count, Is.EqualTo(5));
-            Assert.That((int)(list[0]["id_"]), Is.EqualTo(1));
-            Assert.That((double)(list[0]["payment"]), Is.EqualTo(10));
+            Assert.That((int)(list[0]["id"]), Is.EqualTo(1));
+            Assert.That((int)(list[0]["payment"]), Is.EqualTo(2400));
             Assert.That((int)(list[0]["id_price"]), Is.EqualTo(1));
         }
 
         [Test]
-        public void positionById()
+        public void servisesById()
         {
             DataSet1 dataSet1 = BL.getServicess();
 
-            List<DataRow> list = dataSet1.services.Select("id_ = 1").OfType<DataRow>().ToList();
+            List<DataRow> list = dataSet1.services.Select("id = 1").OfType<DataRow>().ToList();
 
             Assert.That(list.Count, Is.EqualTo(1));
-            Assert.That((int)(list[0]["id_"]), Is.EqualTo(1));
-            Assert.That((double)(list[0]["payment"]), Is.EqualTo(10));
+            Assert.That((int)(list[0]["id"]), Is.EqualTo(1));
+            Assert.That((int)(list[0]["payment"]), Is.EqualTo(2400));
             Assert.That((int)(list[0]["id_price"]), Is.EqualTo(1));
         }
         /// <summary>
         /// 
         /// </summary>
         [Test]
-        public void positionByName()
+        public void servisesByName()
         {
             PricesDataAccessor daPrices = new PricesDataAccessor();
             DataSet1 dataSet1 = new DataSet1();
@@ -78,17 +78,17 @@ namespace BLTests
                 connection.close();
             }
 
-            List<DataRow> list = dataSet1.prices.Select("name = '000001'").OfType<DataRow>().ToList();
+            List<DataRow> list = dataSet1.prices.Select("name = 'Лечение заболеваний твёрдых тканей зуба'").OfType<DataRow>().ToList();
 
             Assert.That(list.Count, Is.EqualTo(1));
 
             Assert.That((int)(list[0]["id"]), Is.EqualTo(1));
-            Assert.That((string)(list[0]["name"]), Is.EqualTo("000001"));
-            Assert.That((int)(list[0]["id_material"]), Is.EqualTo(2));
+            Assert.That((string)(list[0]["name"]), Is.EqualTo("Лечение заболеваний твёрдых тканей зуба"));
+            Assert.That((int)(list[0]["id_material"]), Is.EqualTo(3));
         }
 
         [Test]
-        public void positionByCode()
+        public void servisesByCode()
         {
             PricesDataAccessor daPrices = new PricesDataAccessor();
             DataSet1 dataSet1 = new DataSet1();
@@ -115,13 +115,13 @@ namespace BLTests
 
             Assert.That(list.Count, Is.EqualTo(1));
 
-            Assert.That((int)(list[0]["id"]), Is.EqualTo(1));
-            Assert.That((string)(list[0]["name"]), Is.EqualTo("000001"));
+            Assert.That((int)(list[0]["id"]), Is.EqualTo(2));
+            Assert.That((string)(list[0]["name"]), Is.EqualTo("Установка брекет системы (1 челюсть)"));
             Assert.That((int)(list[0]["id_material"]), Is.EqualTo(2));
         }
 
         [Test]
-        public void positionUpdate()
+        public void servisesUpdate()
         {
             PricesDataAccessor daPrices = new PricesDataAccessor();
             DataSet1 dataSet1 = new DataSet1();
@@ -203,7 +203,7 @@ namespace BLTests
             // Сортируем по id
             list_3.Sort((x, y) => ((int)x["id"]).CompareTo((int)y["id"]));
             // Проверяем что записей столько же
-            Assert.That(list_3.Count, Is.EqualTo(2));
+            Assert.That(list_3.Count, Is.EqualTo(6));
 
             // Достаем ту же запись
             List<DataRow> rows_list = dataSet1.prices.Select("id = " + oldM.id).OfType<DataRow>().ToList();
@@ -220,7 +220,7 @@ namespace BLTests
         }
 
         [Test]
-        public void positionAdd()
+        public void servisesAdd()
         {
             DataSet1 dataSetRead = new DataSet1();
             PricesDataAccessor daPrices = new PricesDataAccessor();
@@ -262,9 +262,9 @@ namespace BLTests
             DataRow rowForAdded = dataSetRead.prices.NewRow();
 
 
-            rowForAdded["name"] = "000000";
-            rowForAdded["price"] = "2011-02-20";
-            rowForAdded["id_material"] = "2";
+            rowForAdded["name"] = "Косметическая процедура";
+            rowForAdded["price"] = "3800";
+            rowForAdded["id_material"] = "5";
 
             dataSetRead.prices.Rows.Add(rowForAdded);
 
@@ -330,7 +330,7 @@ namespace BLTests
         }
 
         [Test]
-        public void positionDelete()
+        public void servisesDelete()
         {
             DataSet1 dataSetRead = new DataSet1();
             PricesDataAccessor daPrices = new PricesDataAccessor();
@@ -344,7 +344,7 @@ namespace BLTests
                 absTran_Read = absCon_Read.beginTransaction();
                 daPrices.Read(absCon_Read, absTran_Read, dataSetRead);
 
-                List<DataRow> rows_list = dataSetRead.prices.Select("name = '000001'").OfType<DataRow>().ToList();
+                List<DataRow> rows_list = dataSetRead.prices.Select("name = 'Лечение заболеваний твёрдых тканей зуба'").OfType<DataRow>().ToList();
                 // Сортируем строки по id в порядке возрастания
                 rows_list.Sort((x, y) => ((int)x["id"]).CompareTo((int)y["id"]));
                 // Количество записей до удаления
@@ -367,7 +367,7 @@ namespace BLTests
             AbstractConnection absCon_Update = null;
             AbstractTransaction absTran_Update = null;
 
-            List<DataRow> list_1 = dataSetRead.prices.Select("name = '000001'").OfType<DataRow>().ToList();
+            List<DataRow> list_1 = dataSetRead.prices.Select("name = 'Лечение заболеваний твёрдых тканей зуба'").OfType<DataRow>().ToList();
 
             foreach (DataRow rowForDel in list_1)
             {
@@ -416,7 +416,7 @@ namespace BLTests
                 absCon_AfterInsert.close();
             }
 
-            List<DataRow> rows_list_AfterInsert = dataSetRead.prices.Select("name = '000001'").OfType<DataRow>().ToList();
+            List<DataRow> rows_list_AfterInsert = dataSetRead.prices.Select("name = 'Лечение заболеваний твёрдых тканей зуба'").OfType<DataRow>().ToList();
 
             Assert.That(rows_list_AfterInsert.Count, Is.EqualTo(0));
         }
